@@ -3,66 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gaming World</title>
-<link rel="stylesheet" href="style.css">
+<title>Login Page</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#1e3c72,#2a5298);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-box{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    width:300px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.login-box h2{
+    text-align:center;
+}
+
+.input-box{
+    margin:15px 0;
+}
+
+.input-box input{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#2a5298;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1e3c72;
+}
+
+#message{
+    text-align:center;
+    margin-top:10px;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">Gaming World</div>
+<div class="login-box">
+<h2>Login</h2>
 
-    <nav>
-        <ul>
-            <li><a href="https://www.rockstargames.com/">Home</a></li>
-            <li><a href="https://www.rockstargames.com/downloads">Games</a></li>
-            <li><a href="https://store.rockstargames.com/?_gl=1*12v5zvt*_ga*MzExMTE5NzU2LjE3NjAxNjU1MjY.*_ga_PJQ2JYZDQC*czE3NzI3NzI2MTMkbzQkZzEkdDE3NzI3NzQxNzMkajE4JGwwJGgw">Store</a></li>
-            <li><a href="https://support.rockstargames.com/?_gl=1*1mcxri6*_ga*MzExMTE5NzU2LjE3NjAxNjU1MjY.*_ga_PJQ2JYZDQC*czE3NzI3NzI2MTMkbzQkZzEkdDE3NzI3NzQxNTQkajM3JGwwJGgw">Support</a></li>
-        </ul>
-    </nav>
-</header>
-
-
-<section class="hero">
-    <h1><b>Gaming World<b></h1>
-    <p><b>Experience the next generation of open world gaming.</b></p>
-    <button id="downloadBtn">Explore more</button>
-</section>
-
-
-<section class="games">
-
-<h2>Popular Games</h2>
-
-<div class="game-container">
-
-<div class="game-card">
-<img src="gta.jpg">
-<h3>GTA V</h3>
-<button><a href="https://www.rockstargames.com/VI">Play</a></button>
+<div class="input-box">
+<input type="text" id="username" placeholder="Enter Username">
 </div>
 
-<div class="game-card">
-<img src="rdr2.jpg">
-<h3>Red Dead Redemption 2</h3>
-<button><a href="https://www.rockstargames.com/reddeadredemption2">Play</a></button>
+<div class="input-box">
+<input type="password" id="password" placeholder="Enter Password">
 </div>
 
-<div class="game-card">
-<img src="gta5.jpg">
-<h3>GTA 5</h3>
-<button><a href="https://www.rockstargames.com/gta-v">Play</a></button>
+<button onclick="login()">Login</button>
+
+<p id="message"></p>
 </div>
 
-</div>
-</section>
+<script>
+function login(){
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
 
-
-<footer>
-<p>© 2026 Gaming World | All Rights Reserved</p>
-</footer>
-
-<script src="script.js"></script>
+    if(user === "admin" && pass === "1234"){
+        document.getElementById("message").innerHTML = "Login Successful ✅";
+        document.getElementById("message").style.color="green";
+    }
+    else{
+        document.getElementById("message").innerHTML = "Invalid Username or Password ❌";
+        document.getElementById("message").style.color="red";
+    }
+}
+</script>
 
 </body>
 </html>
